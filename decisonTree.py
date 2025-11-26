@@ -215,15 +215,16 @@ class DecisionTreeScratchClassifier:
     def predict(self, X):
         return np.array([self.predict_one(x, self.root) for x in X])
 
-# # Train Scratch Decision Tree using entropy as the criterion
-# tree_scratch = DecisionTreeScratchClassifier(max_depth=10, criterion='entropy')
-# tree_scratch.fit(np.array(X_sel), np.array(y))
+# Train Scratch Decision Tree using entropy as the criterion
+tree_scratch = DecisionTreeScratchClassifier(max_depth=10, criterion='entropy')
+tree_scratch.fit(np.array(X_sel), np.array(y))
 
-# # Make predictions
-# y_pred_scratch = tree_scratch.predict(np.array(X_sel))
+# Make predictions
+y_pred_scratch = tree_scratch.predict(np.array(X_sel))
 
-# # Evaluate model performance
-# print("Scratch Decision Tree Accuracy:", accuracy_score(y, y_pred_scratch))
-# print(classification_report(y, y_pred_scratch))
+# Evaluate model performance
+print("Scratch Decision Tree Accuracy:", accuracy_score(y, y_pred_scratch))
+print(classification_report(y, y_pred_scratch))
  
+
 
